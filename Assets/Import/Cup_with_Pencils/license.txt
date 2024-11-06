@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cup with Pencils
+* source:	https://sketchfab.com/3d-models/cup-with-pencils-65f734dd770f43bb95174dc1059677c3
+* author:	BlackCube (https://sketchfab.com/blackcube4)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cup with Pencils" (https://sketchfab.com/3d-models/cup-with-pencils-65f734dd770f43bb95174dc1059677c3) by BlackCube (https://sketchfab.com/blackcube4) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

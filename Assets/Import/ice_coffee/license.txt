@@ -1,0 +1,8 @@
+Model Information:
+* title:	ice coffee
+* source:	https://sketchfab.com/3d-models/ice-coffee-d0126a95f8a142ce9071881e9fbc6fbe
+* author:	csar (https://sketchfab.com/csar)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

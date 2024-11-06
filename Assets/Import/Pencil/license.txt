@@ -1,0 +1,8 @@
+Model Information:
+* title:	Pencil
+* source:	https://sketchfab.com/3d-models/pencil-efc02fb95e074d1c84b67bf44e1980b3
+* author:	Liza (https://sketchfab.com/lizazebubu)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

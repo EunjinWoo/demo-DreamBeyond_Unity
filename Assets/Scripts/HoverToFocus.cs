@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class HoverToFocus : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class HoverToFocus : MonoBehaviour
     public Transform laptopObject; // 노트북 오브젝트의 Transform
     public float transitionSpeed = 2f; // 카메라 이동 속도
     private bool isHoveringTriggered = false; // 한번이라도 호버되었는지 확인하는 플래그
+    private bool canHover = true; // 일정 시간 동안 호버를 일시적으로 비활성화하는 플래그
     private Vector3 originalPosition; // 초기 카메라 위치 저장
     private Quaternion originalRotation; // 초기 카메라 회전 저장
     private CameraOrbit cameraOrbitScript;
@@ -27,11 +29,14 @@ public class HoverToFocus : MonoBehaviour
 
     void OnMouseEnter()
     {
-        Debug.Log("Mouse entered the object.");
-        isHoveringTriggered = true; // 한번이라도 호버되면 true로 설정
-        if (cameraOrbitScript != null)
+        if (canHover && !isHoveringTriggered)
         {
-            cameraOrbitScript.enabled = false; // Hover 시작 시 CameraOrbit 비활성화
+            Debug.Log("Mouse entered the object.");
+            isHoveringTriggered = true; // 한번이라도 호버되면 true로 설정
+            if (cameraOrbitScript != null)
+            {
+                cameraOrbitScript.enabled = false; // Hover 시작 시 CameraOrbit 비활성화
+            }
         }
     }
 
@@ -62,7 +67,7 @@ public class HoverToFocus : MonoBehaviour
                 {
                     Debug.Log("Raycast did not hit any object."); // Ray가 어떤 오브젝트도 감지하지 못했을 때
                     Debug.Log("Outside laptop detected, resetting camera."); // 노트북 바깥을 클릭했음을 로그로 확인
-                        ResetCamera();
+                    ResetCamera();
                 }
             }
         }
@@ -71,9 +76,17 @@ public class HoverToFocus : MonoBehaviour
     void ResetCamera()
     {
         isHoveringTriggered = false; // 다시 원래 상태로 설정
+        canHover = false; // 일시적으로 Hover 비활성화
         if (cameraOrbitScript != null)
         {
             cameraOrbitScript.enabled = true; // CameraOrbit 활성화
         }
+        StartCoroutine(ReenableHoveringAfterDelay(3f)); // 3초 후에 Hover 다시 활성화
+    }
+
+    private IEnumerator ReenableHoveringAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // delay 만큼 대기
+        canHover = true; // 5초 후 다시 Hover 가능하도록 설정
     }
 }
